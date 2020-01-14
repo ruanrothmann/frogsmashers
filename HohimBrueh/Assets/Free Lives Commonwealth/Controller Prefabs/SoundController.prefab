@@ -1,0 +1,452 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &159832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 429746}
+  - component: {fileID: 11493428}
+  - component: {fileID: 11433922}
+  - component: {fileID: 82014279202053292}
+  m_Layer: 0
+  m_Name: SoundController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &429746
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159832}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.22270584, y: -0.050741494, z: -12.071846}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11433922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5086de08f13ce674f9da79f5ce20e624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BatHit1
+    clips:
+    - {fileID: 8300000, guid: 41ef5aed148464a0fba556bf82bc92c7, type: 3}
+    - {fileID: 8300000, guid: 311dd2f08a56f4104a2a982e762e05fe, type: 3}
+    - {fileID: 8300000, guid: 6c11112ba2ca04901942da59797a0da4, type: 3}
+    - {fileID: 8300000, guid: 524839783611047d69d79ea3a936f977, type: 3}
+    - {fileID: 8300000, guid: 6286f3ed6fbf04e62b339a4c530ba6c5, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.1
+  - name: BatHit2
+    clips:
+    - {fileID: 8300000, guid: 04e31d7483ffa41219b190b45977e764, type: 3}
+    - {fileID: 8300000, guid: fd3694e838cad424d9167f0be9a389ee, type: 3}
+    - {fileID: 8300000, guid: b7348de085e7d4768bc196b9a4fe0da3, type: 3}
+    - {fileID: 8300000, guid: d2db1f1d4fbfd41aca93b5cc4eb71324, type: 3}
+    - {fileID: 8300000, guid: ae0c9540db8734d1ea14b97c39d11bcd, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.1
+  - name: BatHit3
+    clips:
+    - {fileID: 8300000, guid: cc6a8d7d909e64db2bb427c116e95d66, type: 3}
+    - {fileID: 8300000, guid: ea5356044f77f444b87cd48f45367d1e, type: 3}
+    - {fileID: 8300000, guid: 6c0c7751d64054108abf0be420748bb5, type: 3}
+    - {fileID: 8300000, guid: cab53dc19c5584bb39fc673383419f15, type: 3}
+    - {fileID: 8300000, guid: 7bb9674232a384f42851afde861f0a64, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.1
+  - name: BatHit4
+    clips:
+    - {fileID: 8300000, guid: a5fe3f015c14546829b5a8b6b8a2610b, type: 3}
+    - {fileID: 8300000, guid: c7274cd980fda46898fb8ca6fc573cc1, type: 3}
+    - {fileID: 8300000, guid: 652973fbce70b4c2ebc879ac8e9368bb, type: 3}
+    - {fileID: 8300000, guid: 70c4111420aa54201b0d07c4e0ea50e4, type: 3}
+    - {fileID: 8300000, guid: 3840e5835cf024ac28010db42a1153ec, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.1
+  - name: BatHit5
+    clips:
+    - {fileID: 8300000, guid: 1fe18cbb72c34408fb75d1c766bddc1b, type: 3}
+    - {fileID: 8300000, guid: 964f4947a09124b39b7d3400d9bdd21c, type: 3}
+    - {fileID: 8300000, guid: f6555c6c920af4c04b6787551232b7ce, type: 3}
+    - {fileID: 8300000, guid: f5e3e88498126420c9ae466219da2492, type: 3}
+    - {fileID: 8300000, guid: 91466682217ff47b5b2f736c71c92e83, type: 3}
+    volumeMod: 1
+    pitchVariance: 0
+  - name: BatSwing
+    clips:
+    - {fileID: 8300000, guid: 035856662bbe44584a89772d0dab4f13, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.1
+  - name: BatChargeup
+    clips:
+    - {fileID: 8300000, guid: e76efb0276312440c8b3ba087c5c54a2, type: 3}
+    volumeMod: 0.3
+    pitchVariance: 0.1
+  - name: FrogFly
+    clips: []
+    volumeMod: 1
+    pitchVariance: 0.1
+  - name: FrogBounce
+    clips:
+    - {fileID: 8300000, guid: 2dcc3673196764ddfbf01f17bb3deadb, type: 3}
+    - {fileID: 8300000, guid: b2e3db84273004fc584bce3d13ac7776, type: 3}
+    - {fileID: 8300000, guid: aae120a5d2508443b9cf92521b598f72, type: 3}
+    - {fileID: 8300000, guid: 234749aa38172469d8f227e222660e40, type: 3}
+    - {fileID: 8300000, guid: 466f8347161274905b89bea78341ed5a, type: 3}
+    - {fileID: 8300000, guid: 12dcff3e6d2354fd5a7262e9ece88dc8, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.6
+  - name: Footstep
+    clips:
+    - {fileID: 8300000, guid: 088a82f91ed054a3d838c972e8331c1b, type: 3}
+    - {fileID: 8300000, guid: daf444830f76d4909a6b2e7a1a2777db, type: 3}
+    - {fileID: 8300000, guid: 799de9f10f1704d0a9a7e63378f61ed2, type: 3}
+    - {fileID: 8300000, guid: 493d08cd6d6614a1aa38ee24ecdfb934, type: 3}
+    - {fileID: 8300000, guid: 5e950352c192248228d77a56ecaab8e2, type: 3}
+    - {fileID: 8300000, guid: a00227480e6e14676b8232c653f22fca, type: 3}
+    - {fileID: 8300000, guid: 049a79f13745d4ade81bb4516c75c85d, type: 3}
+    - {fileID: 8300000, guid: 14546f23603184ad69a5fb0d79ffda32, type: 3}
+    - {fileID: 8300000, guid: 0b1f0427d234c45f3b9dedc4a621cede, type: 3}
+    - {fileID: 8300000, guid: a3ebc031694a741aa8d41596c9bf6d5d, type: 3}
+    - {fileID: 8300000, guid: 172ddaac4dfca4052a02242d7ffe18ab, type: 3}
+    - {fileID: 8300000, guid: 79dc3d02ff73c44e5b0f53eeb2acee00, type: 3}
+    - {fileID: 8300000, guid: d8210b0bb4f15425887edc08bf557c28, type: 3}
+    - {fileID: 8300000, guid: f908b99a13b5547cb85034faa2b3da45, type: 3}
+    - {fileID: 8300000, guid: c0a2eb0b15a674788a3113c2eb693a9e, type: 3}
+    volumeMod: 0.6
+    pitchVariance: 0.3
+  - name: TongueCollideSurface
+    clips:
+    - {fileID: 8300000, guid: a148e78f72b3547df99156529b3cab4f, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.6
+  - name: TongueCollide
+    clips:
+    - {fileID: 8300000, guid: a148e78f72b3547df99156529b3cab4f, type: 3}
+    - {fileID: 8300000, guid: 3827d09bc7d3b4a169f1be6be207e536, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.4
+  - name: Jump
+    clips:
+    - {fileID: 8300000, guid: 1d17559e3da6942eb891cff3b3c9a66f, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.6
+  - name: TongueLaunch
+    clips:
+    - {fileID: 8300000, guid: 72f7da098dd530845ad8c1c4aeebc491, type: 3}
+    - {fileID: 8300000, guid: 385dd0a846f194b4797a7dac5dc7b2c5, type: 3}
+    - {fileID: 8300000, guid: 1eecc605e3dcba14dbcc0c588a5dbcd4, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.2
+  - name: Knockout1
+    clips:
+    - {fileID: 8300000, guid: d571ea7a8595547b298841689a873961, type: 3}
+    volumeMod: 0.4
+    pitchVariance: 0
+  - name: Knockout2
+    clips:
+    - {fileID: 8300000, guid: d5edd55422f45477084a6cbe21d1db79, type: 3}
+    volumeMod: 0.4
+    pitchVariance: 0
+  - name: Knockout3
+    clips:
+    - {fileID: 8300000, guid: bbbf8b9a3f262416ab8d5e83f8dbee5c, type: 3}
+    volumeMod: 0.3
+    pitchVariance: 0
+  - name: KnockoutSuicide
+    clips:
+    - {fileID: 8300000, guid: 483eb79551852430cb82b7ffd2feb3ef, type: 3}
+    volumeMod: 0.4
+    pitchVariance: 0
+  - name: VictorySting
+    clips:
+    - {fileID: 8300000, guid: 0026f98964bfd492dbb6142796f4f1ec, type: 3}
+    volumeMod: 0.8
+    pitchVariance: 0
+  - name: Land
+    clips:
+    - {fileID: 8300000, guid: beb5af1bd201848328fca9bc2d08f381, type: 3}
+    - {fileID: 8300000, guid: 5f6f381e287414fdf9f2d2a7d0c4da82, type: 3}
+    - {fileID: 8300000, guid: 7ad53b8bc483248f19506055cf8fedc5, type: 3}
+    - {fileID: 8300000, guid: c498ded3a53a14ba09dcd37f68e2a380, type: 3}
+    - {fileID: 8300000, guid: 523cbceea18524f5ebb200a9d7180ef5, type: 3}
+    - {fileID: 8300000, guid: 62964986962774564a92c43a4dbe4f75, type: 3}
+    - {fileID: 8300000, guid: 278a1c1f850424f3d9d66598537ba4bc, type: 3}
+    - {fileID: 8300000, guid: cf7b18ffe64d947b088b0cd8ff1c6000, type: 3}
+    - {fileID: 8300000, guid: 42582f69fd3b9441bb3b29317f11e596, type: 3}
+    - {fileID: 8300000, guid: b4f00dfcbf5324fe0909f5b2cfc2c05f, type: 3}
+    - {fileID: 8300000, guid: 1062b34445b0442a493960363ab9c585, type: 3}
+    - {fileID: 8300000, guid: 08a4ee47a3ebd4824a382601f9e6b615, type: 3}
+    - {fileID: 8300000, guid: 8881a10a267a149469b0112d2e94921b, type: 3}
+    - {fileID: 8300000, guid: 693e8ee5f1c7f42a788910dc3e100bcf, type: 3}
+    - {fileID: 8300000, guid: 961b7ec855f074ac79c388a6eb4cdb76, type: 3}
+    - {fileID: 8300000, guid: edb043adc1cfc4bfd835521af89c07bc, type: 3}
+    volumeMod: 1
+    pitchVariance: 0.2
+  - name: CharacterSpawn
+    clips:
+    - {fileID: 8300000, guid: da4426f25b8f6418ca9c8feadbcb3aca, type: 3}
+    volumeMod: 0.7
+    pitchVariance: 0
+  - name: Launch1
+    clips: []
+    volumeMod: 0.2
+    pitchVariance: 0.3
+  - name: Launch2
+    clips: []
+    volumeMod: 0.2
+    pitchVariance: 0.3
+  - name: Launch3
+    clips:
+    - {fileID: 8300000, guid: 24227731dc1b44f6ea3fc4e9186b46cd, type: 3}
+    volumeMod: 0.2
+    pitchVariance: 0.3
+  - name: LaunchVoice1
+    clips: []
+    volumeMod: 0.2
+    pitchVariance: 0
+  - name: LaunchVoice2
+    clips: []
+    volumeMod: 0.3
+    pitchVariance: 0
+  - name: LaunchVoice3
+    clips:
+    - {fileID: 8300000, guid: 00e1ea33d7d34455589bb71ca3c0e8c1, type: 3}
+    - {fileID: 8300000, guid: 725c3f4240c414eb59c2fe83733b68f8, type: 3}
+    - {fileID: 8300000, guid: 77764f5f65a11426c871cbb720282b32, type: 3}
+    - {fileID: 8300000, guid: a2e1627ad43974c6eadb6d04b470021f, type: 3}
+    volumeMod: 0.6
+    pitchVariance: 0
+  - name: BatHitVoice1
+    clips:
+    - {fileID: 8300000, guid: b388c176dff944a5cbbdc82a5e5d685b, type: 3}
+    - {fileID: 8300000, guid: 8811f72885ceb4e48af5ff33f339bd66, type: 3}
+    - {fileID: 8300000, guid: cfd44142fb9e245e58420aa668b67dc3, type: 3}
+    - {fileID: 8300000, guid: 1d22c1a3858c64b7cba58b8f73ca8b31, type: 3}
+    - {fileID: 8300000, guid: 981b761ff7b3a41599b8b94543620663, type: 3}
+    - {fileID: 8300000, guid: b355cd4e89f064d768e5ad5338378fb2, type: 3}
+    - {fileID: 8300000, guid: 3fa7cb306f014406e9d3bac3e962edd4, type: 3}
+    - {fileID: 8300000, guid: bbf740dedbe5a4ef39450212483a7c0c, type: 3}
+    - {fileID: 8300000, guid: c0b399c85c5914a8a8324bdaeba6c568, type: 3}
+    volumeMod: 0.4
+    pitchVariance: 0
+  - name: BatHitVoice2
+    clips:
+    - {fileID: 8300000, guid: 8ed490d5b06154bcf9b3c6895dd04ff7, type: 3}
+    - {fileID: 8300000, guid: 1459a22c86679461396143487317210f, type: 3}
+    - {fileID: 8300000, guid: 8c6c7b07d1bfc4dfb95cff2b04d172d0, type: 3}
+    - {fileID: 8300000, guid: 8f189c229b3054d25b3784bfd2eac788, type: 3}
+    - {fileID: 8300000, guid: b15be521d1be34e4e96450b3fa7e34c0, type: 3}
+    - {fileID: 8300000, guid: 56f5cf74679224e6383b79ea262b60ad, type: 3}
+    - {fileID: 8300000, guid: 9142314280e5c4c44ae3ae6e212d5990, type: 3}
+    - {fileID: 8300000, guid: d6e58875fcd12451f96b5be503804395, type: 3}
+    volumeMod: 1
+    pitchVariance: 0
+  - name: BatHitVoice3
+    clips:
+    - {fileID: 8300000, guid: 4533fff8b704a4ddba81ad7a0b965f74, type: 3}
+    - {fileID: 8300000, guid: 4b2f437d18bbe410f82d64519f90ee77, type: 3}
+    - {fileID: 8300000, guid: 27f62d7c3296e4a24a68fc57b06f182f, type: 3}
+    - {fileID: 8300000, guid: 9f3a61a23a21543a6b667fefc0c205a0, type: 3}
+    - {fileID: 8300000, guid: e195bda8de9694774a1d74aa3a4076ee, type: 3}
+    volumeMod: 1
+    pitchVariance: 0
+  - name: BatHitVoice4
+    clips:
+    - {fileID: 8300000, guid: 77dc0576ec7cd45d7a1de720d90be761, type: 3}
+    - {fileID: 8300000, guid: 5865365653e544559b6a89387ad15ad4, type: 3}
+    - {fileID: 8300000, guid: 76f4adfe64f5b4a3a8afdd708ecd950a, type: 3}
+    volumeMod: 1
+    pitchVariance: 0
+  - name: BatHitVoice5
+    clips:
+    - {fileID: 8300000, guid: 77dc0576ec7cd45d7a1de720d90be761, type: 3}
+    - {fileID: 8300000, guid: 5865365653e544559b6a89387ad15ad4, type: 3}
+    - {fileID: 8300000, guid: 76f4adfe64f5b4a3a8afdd708ecd950a, type: 3}
+    volumeMod: 1
+    pitchVariance: 0
+  - name: FrogBounceVoice
+    clips:
+    - {fileID: 8300000, guid: cafd5af4ce3bd46b2a8d90f55b629603, type: 3}
+    - {fileID: 8300000, guid: 6a934d112a2b945aa874596c2d80a0f4, type: 3}
+    - {fileID: 8300000, guid: b1e17890b7a664cb984fcd22cd93b572, type: 3}
+    - {fileID: 8300000, guid: e1b149c9c4bc2481783339389d610e88, type: 3}
+    - {fileID: 8300000, guid: b21870a28d17b448b8ed8b9f6770cf4b, type: 3}
+    volumeMod: 0.2
+    pitchVariance: 0
+  - name: BatSwingVoice
+    clips:
+    - {fileID: 8300000, guid: 45182fe2afe36459da3427f663111643, type: 3}
+    - {fileID: 8300000, guid: 0910d9382f5bf4b3e93b4ae932eb5c34, type: 3}
+    - {fileID: 8300000, guid: 1b7e55c9816904eefa1b95be170fd1af, type: 3}
+    - {fileID: 8300000, guid: b740247459b1d4f0783f8f86bfa05387, type: 3}
+    - {fileID: 8300000, guid: 5a6a6d217524743c983849790245266a, type: 3}
+    - {fileID: 8300000, guid: ca0a4bf0cd9f340ad9fb61834a186ed2, type: 3}
+    - {fileID: 8300000, guid: 4f200e91e9b3e4c22aec272f99a9c41a, type: 3}
+    - {fileID: 8300000, guid: 807132269fa5d45539089fa64bc9452a, type: 3}
+    - {fileID: 8300000, guid: da1358c8720324bb88b8aa1520768197, type: 3}
+    - {fileID: 8300000, guid: 0648e90cfcad7449e959cb43127e060d, type: 3}
+    - {fileID: 8300000, guid: 2a9cd0faac7d14bbf95d57e6634a3d5e, type: 3}
+    - {fileID: 8300000, guid: 0caf23fa5a8ea4172af1605bb70db2d5, type: 3}
+    - {fileID: 8300000, guid: 4cb9efd07e28544fb9c54fa0a21ce9a6, type: 3}
+    - {fileID: 8300000, guid: f23842a3b407d4e75bdbff8d3e08a8e4, type: 3}
+    - {fileID: 8300000, guid: 0535c0a1e3a6841208113895e00f6dee, type: 3}
+    - {fileID: 8300000, guid: b342d3b6c30bd454fb09090debdee116, type: 3}
+    volumeMod: 0.2
+    pitchVariance: 0.1
+  - name: CharacterCollision
+    clips:
+    - {fileID: 8300000, guid: de145ac66f8d548268a1dbd47bf17849, type: 3}
+    - {fileID: 8300000, guid: 172f0c1d0f6174e10be4e51df7e9675f, type: 3}
+    - {fileID: 8300000, guid: 3a43977c4d3ba4e81a83a7bb7518114d, type: 3}
+    - {fileID: 8300000, guid: 6f2bd31dce9df43afbda55aa5529dfea, type: 3}
+    - {fileID: 8300000, guid: 89496cc34ad654185bdcd4f5c531389b, type: 3}
+    - {fileID: 8300000, guid: 0343a58c9fdee4331a391b2a050f17a9, type: 3}
+    - {fileID: 8300000, guid: 7b8c209c88f7a4b5f926f9c6aa990798, type: 3}
+    - {fileID: 8300000, guid: 4d0e317f673cf45389d5fc8402bbf407, type: 3}
+    volumeMod: 0.5
+    pitchVariance: 0.1
+  - name: Burp
+    clips:
+    - {fileID: 8300000, guid: 23c4f03942a2d4e30be2a548cab95603, type: 3}
+    - {fileID: 8300000, guid: f59636d3e4dea4bbc9a024d416fbffdd, type: 3}
+    - {fileID: 8300000, guid: 447fd2d660af74420bded195e5ebd19b, type: 3}
+    volumeMod: 0.5
+    pitchVariance: 0.1
+  - name: BackgroundExplosion
+    clips:
+    - {fileID: 8300000, guid: a42fb36165cf249bc9bfe4c6f4121b36, type: 3}
+    - {fileID: 8300000, guid: bbafc9650723f4093a9e8554ad86d74d, type: 3}
+    - {fileID: 8300000, guid: 87a843b9d73c54a76b610b0f76f84747, type: 3}
+    - {fileID: 8300000, guid: 01f8cbc43d340425cb2dbdc46c4c0e4f, type: 3}
+    - {fileID: 8300000, guid: 05cef822f78e142e79e0dc27045963a6, type: 3}
+    - {fileID: 8300000, guid: 9bf26a06162914d4880150911850c426, type: 3}
+    - {fileID: 8300000, guid: 110604e87ab254d45860c346ee872216, type: 3}
+    - {fileID: 8300000, guid: b23e132f08dc74fadb7f90b12a657373, type: 3}
+    - {fileID: 8300000, guid: 4d56197c6034b4267b3ba0b8a08aa911, type: 3}
+    - {fileID: 8300000, guid: 197ab43689a564850a511ba920c10dcc, type: 3}
+    - {fileID: 8300000, guid: 7e55d350628054ee9bc0fc6ad7a1a70c, type: 3}
+    - {fileID: 8300000, guid: 63d40639d187549c3bae1ac4ffb0dab2, type: 3}
+    - {fileID: 8300000, guid: fdf6939efe3214cc28c05b33c5157066, type: 3}
+    - {fileID: 8300000, guid: 7ed14064ad8464067935df91627e8188, type: 3}
+    - {fileID: 8300000, guid: be2b427a3d7b442089ae70baa50eeefc, type: 3}
+    volumeMod: 0.5
+    pitchVariance: 0.1
+--- !u!114 &11493428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d34aaa0d0d2af4bb2bb0d2025d3c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 159832}
+  m_IsPrefabParent: 1
+--- !u!82 &82014279202053292
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159832}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 344579eb4c0a043e69451d7c77c97568, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.539
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
