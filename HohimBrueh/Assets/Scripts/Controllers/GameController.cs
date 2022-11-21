@@ -369,6 +369,11 @@ public class GameController : MonoBehaviour
         {
             showGui = !showGui;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     void SetupForJoinScreen()
