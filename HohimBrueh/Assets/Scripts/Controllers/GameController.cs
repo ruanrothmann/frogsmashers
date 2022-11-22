@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     public static bool weirdBounceTrajectories = false;
     public static bool onlyBounceBeforeRecover = true;
     public static bool allowTeamMode = false;
+    public static bool allowCustomScoreToWin = false;
+    public static float customScoreToWin = 10f;
 
     public static List<Player> activePlayers = new List<Player>();
 
@@ -53,7 +55,6 @@ public class GameController : MonoBehaviour
     public bool isJoinScreen;
 
     public static string[] levelNames = new string[] { "1BusStop", "2DownSmash", "3Moon", "4FinalFrogstination", "5Skyline", "6Finale" };
-    //public static string[] levelNames = new string[] {  "2DownSmash" };
     public JoinCanvas[] joinCanvas;
 
     float finishDelay = 7.5f;
@@ -223,15 +224,14 @@ public class GameController : MonoBehaviour
 
             bool playersAreReady = CheckReadyPlayers();
 
-            if (assignedPlayers == 0)
+            if (assignedPlayers == 0 && allowTeamMode)
             {
-                InputReader.GetInput(combinedInput);
-                if (combinedInput.start && !combinedInput.wasStart && allowTeamMode)
+
+                if (Input.GetKeyDown(KeyCode.F5))
                 {
                     isTeamMode = !isTeamMode;
                     joinGameModeText.text = isTeamMode ? "TEAM" : "FREE  FOR  ALL";
                 }
-
             }
             else
             if (playersAreReady)
@@ -333,7 +333,7 @@ public class GameController : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
             }
@@ -611,11 +611,15 @@ public class GameController : MonoBehaviour
             bool wonRound = false;
             if (GameController.isTeamMode)
             {
-                wonRound = ((gotPoint.team == Team.Red && instance.redTeamScore >= 10) || (gotPoint.team == Team.Blue && instance.blueTeamScore >= 10));
+                bool redWon = allowCustomScoreToWin ? instance.redTeamScore >= (int)customScoreToWin : instance.redTeamScore >= 10;
+                bool blueWon = allowCustomScoreToWin ? instance.blueTeamScore >= (int)customScoreToWin : instance.blueTeamScore >= 10;
+                wonRound = ((gotPoint.team == Team.Red && redWon) || (gotPoint.team == Team.Blue && blueWon));
             }
             else
-            {
-                if (activePlayers.Count == 2)
+            { 
+                if (allowCustomScoreToWin)
+                    wonRound = gotPoint.score >= (int)customScoreToWin;
+                else if (activePlayers.Count == 2)
                     wonRound = gotPoint.score >= 5;
                 else
                     wonRound = gotPoint.score >= 10;
@@ -690,10 +694,14 @@ public class GameController : MonoBehaviour
     {
         if (showGui)
         {
-            GUILayout.BeginArea(new Rect(0, 0, 400, 400));
+            GUILayout.BeginArea(new Rect(0, 0, 800, 800));
             charactersBounceEachOther = GUILayout.Toggle(charactersBounceEachOther, "Characters Bounce Each Other");
             weirdBounceTrajectories = GUILayout.Toggle(weirdBounceTrajectories, "Weird Bounce Trajectories");
             onlyBounceBeforeRecover = GUILayout.Toggle(onlyBounceBeforeRecover, "Only Bounce Before Recover");
+            allowTeamMode = GUILayout.Toggle(allowTeamMode, "Allow Team Deathmatch (F5 to toggle mode)");
+            allowCustomScoreToWin = GUILayout.Toggle(allowCustomScoreToWin, "Use Custom Score To Win");
+            customScoreToWin = GUILayout.HorizontalScrollbar(customScoreToWin, 1.0f, 1.0f, 100.0f);
+            GUILayout.Label($"Custom score to win is {customScoreToWin}");
             GUILayout.EndArea();
         }
     }
