@@ -14,6 +14,7 @@ env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
   UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+  GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
   PROJECT_PATH: HohimBrueh
 
 jobs:
@@ -144,7 +145,7 @@ jobs:
           repo_name: PNone/frogsmashers
           # A personal access token for the GitHub repository in which the release will be created and edited.
           # It is recommended to create the access token with the following scopes: `repo, user, admin:repo_hook`.
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ env.GIT_ACCESS_TOKEN }}
           file: build/FrogSmashersOSX
           asset_name: FrogSmashersOSX
           tag: ${{ github.ref }}
@@ -191,7 +192,7 @@ jobs:
           repo_name: PNone/frogsmashers
           # A personal access token for the GitHub repository in which the release will be created and edited.
           # It is recommended to create the access token with the following scopes: `repo, user, admin:repo_hook`.
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ env.GIT_ACCESS_TOKEN }}
           file: build/FrogSmashersWindows
           asset_name: FrogSmashersWindows
           tag: ${{ github.ref }}
