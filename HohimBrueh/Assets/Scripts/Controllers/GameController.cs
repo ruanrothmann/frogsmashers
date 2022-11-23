@@ -701,7 +701,7 @@ public class GameController : MonoBehaviour
             allowTeamMode = GUILayout.Toggle(allowTeamMode, "Allow Team Deathmatch (F5 to toggle mode)");
             allowCustomScoreToWin = GUILayout.Toggle(allowCustomScoreToWin, "Use Custom Score To Win");
             customScoreToWin = GUILayout.HorizontalScrollbar(customScoreToWin, 1.0f, 1.0f, 100.0f);
-            GUILayout.Label($"Custom score to win is {customScoreToWin}");
+            GUILayout.Label($"Custom score to win is {(int)customScoreToWin}");
             GUILayout.EndArea();
         }
     }
