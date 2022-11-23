@@ -1,8 +1,14 @@
-name: Frog Smashers Unity Actions (Copied from https://github.com/game-ci/unity-actions-example/blob/main/.github/workflows/main.yml)
+name: Frog Smashers Publish Release
+# Frog Smashers Unity Actions (Copied from https://github.com/game-ci/unity-actions-example/blob/main/.github/workflows/main.yml)
 
+
+# on:
+#   pull_request: {}
+#   push: {}
 on:
-  pull_request: {}
-  push: {}
+  push:
+    tags:
+      - '*'
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -68,36 +74,36 @@ jobs:
           name: Test results (all modes)
           path: ${{ steps.testRunner.outputs.artifactsPath }}
 
-  build:
-    needs: [checklicense]
-    if: needs.checklicense.outputs.is_unity_license_set == 'true'
-    name: Build for Linux
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        targetPlatform:
-          - StandaloneLinux64
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          lfs: true
-      - uses: actions/cache@v3
-        with:
-          path: ${{ matrix.projectPath }}/Library
-          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
-          restore-keys: |
-            Library-${{ matrix.projectPath }}-
-            Library-
-      # https://github.com/game-ci/unity-builder/releases/
-      - uses: game-ci/unity-builder@v2
-        with:
-          projectPath: ${{ env.PROJECT_PATH }}
-          targetPlatform: ${{ matrix.targetPlatform }}
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Build-${{ matrix.targetPlatform }}
-          path: build
+#   build:
+#     needs: [checklicense]
+#     if: needs.checklicense.outputs.is_unity_license_set == 'true'
+#     name: Build for Linux
+#     runs-on: ubuntu-latest
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         targetPlatform:
+#           - StandaloneLinux64
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           lfs: true
+#       - uses: actions/cache@v3
+#         with:
+#           path: ${{ matrix.projectPath }}/Library
+#           key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
+#           restore-keys: |
+#             Library-${{ matrix.projectPath }}-
+#             Library-
+#       # https://github.com/game-ci/unity-builder/releases/
+#       - uses: game-ci/unity-builder@v2
+#         with:
+#           projectPath: ${{ env.PROJECT_PATH }}
+#           targetPlatform: ${{ matrix.targetPlatform }}
+#       - uses: actions/upload-artifact@v3
+#         with:
+#           name: Build-${{ matrix.targetPlatform }}
+#           path: build
 
   buildWithMac:
     needs: [checklicense]
@@ -125,11 +131,25 @@ jobs:
         with:
           projectPath: ${{ env.PROJECT_PATH }}
           targetPlatform: ${{ matrix.targetPlatform }}
+          buildName: FrogSmashersOSX
+          versioning: Semantic
       - name: Upload Build
         uses: actions/upload-artifact@v3
         with:
-          name: Build-${{ matrix.targetPlatform }}
+          name: FrogSmashersOSX
           path: build
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_name: PNone/frogsmashers
+          # A personal access token for the GitHub repository in which the release will be created and edited.
+          # It is recommended to create the access token with the following scopes: `repo, user, admin:repo_hook`.
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/FrogSmashersOSX
+          asset_name: FrogSmashersOSX
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "New release for frog smashers"
 
   buildWithWindows:
     needs: [checklicense]
@@ -140,7 +160,7 @@ jobs:
       fail-fast: false
       matrix:
         targetPlatform:
-          - StandaloneWindows
+#           - StandaloneWindows
           - StandaloneWindows64
     steps:
       - name: Checkout Repository
@@ -158,8 +178,22 @@ jobs:
         with:
           projectPath: ${{ env.PROJECT_PATH }}
           targetPlatform: ${{ matrix.targetPlatform }}
+          buildName: FrogSmashers${{ matrix.targetPlatform }}
+          versioning: Semantic
       - name: Upload Build
         uses: actions/upload-artifact@v3
         with:
-          name: Build-${{ matrix.targetPlatform }}
+          name: FrogSmashersWindows
           path: build
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_name: PNone/frogsmashers
+          # A personal access token for the GitHub repository in which the release will be created and edited.
+          # It is recommended to create the access token with the following scopes: `repo, user, admin:repo_hook`.
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/FrogSmashersWindows
+          asset_name: FrogSmashersWindows
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "New release for frog smashers"
